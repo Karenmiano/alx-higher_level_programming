@@ -43,7 +43,7 @@ class Square:
         if self.__size is 0:
             print()
         else:
-            for width in range(self.__size + 1):
+            for width in range(self.__size):
                 print("#" * self.__size)
 
     def area(self):
