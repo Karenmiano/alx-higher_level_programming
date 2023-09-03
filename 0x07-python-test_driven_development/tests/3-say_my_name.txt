@@ -1,0 +1,59 @@
+===========================
+Guide for 3-say_my_name.py
+===========================
+
+This module contains the function ``say_my_name(first_name, last_name="")``
+which prints out "My name is <first name> <last name>".
+
+Usage
+=====
+
+::
+
+   >>> say_my_name = __import__("3-say_my_name").say_my_name
+   >>> say_my_name("Karen", "Miano")
+   My name is Karen Miano
+
+'last_name' has a default value, empty string therefore if only first_name is provided first_name
+only first_name will be printed.
+
+::
+
+   >>> say_my_name("Karen")
+   My name is Karen 
+
+'first_name' must always be provided.
+
+::
+
+   >>> say_my_name(, "Miano")
+   Traceback (most recent call last):
+   SyntaxError: invalid syntax
+
+Invalid inputs
+==============
+
+``say_my_name(first_name, last_name="")`` only accepts strings, any invalid input will
+raise an error pointing to the invalid input.
+
+::
+
+   >>> say_my_name(5, "Miano")
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+   >>> say_my_name("Karen", 5)
+   Traceback (most recent call last):
+   TypeError: last_name must be a string
+
+If both inputs are not strings the error will be raised only pointing to first_name.
+
+::
+
+   >>> say_my_name(5, 5)
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+
+::
+   >>> say_my_name(None, 5)
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
