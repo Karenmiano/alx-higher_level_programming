@@ -71,7 +71,8 @@ class Rectangle:
         """Returns a visual string display of the rectangle using #."""
         if self.__height == 0 or self.__width == 0:
             return ("")
-        rows = [str(self.print_symbol) * self.__width for _ in range(self.__height)]
+        rows = [str(self.print_symbol) * self.__width
+                for _ in range(self.__height)]
         display = "\n".join(rows)
         return (display)
 
