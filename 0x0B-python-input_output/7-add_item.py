@@ -13,4 +13,4 @@ if __name__ == '__main__':
         growing_list += load_from_json_file("add_item.json")
         save_to_json_file(growing_list, "add_item.json")
     except FileNotFoundError:
-        save_to_json_file([], "add_item.json")
+        save_to_json_file(growing_list, "add_item.json")
