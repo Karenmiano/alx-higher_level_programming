@@ -48,3 +48,14 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creates and returns an instance of any of its inherited classes."""
+        if dictionary:
+            if cls.__name__ == "Rectangle":
+                obj = cls(2, 2)
+            elif cls.__name__ == "Square":
+                obj = cls(2)
+            obj.update(**dictionary)
+            return obj
