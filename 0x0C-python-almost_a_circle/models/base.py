@@ -63,11 +63,11 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns objects that had been stored in a file in json format."""
-        file_name = cls.__name__ + ".json"
+        file_name = str(cls.__name__) + ".json"
         try:
             with open(file_name, "r", encoding="UTF8") as f:
                 string = f.read()
                 list_dict = Base.from_json_string(string)
                 return [cls.create(**obj_dict) for obj_dict in list_dict]
-        except IOError:
+        except FileNotFoundError:
             return []
