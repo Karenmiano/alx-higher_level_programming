@@ -12,8 +12,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     record = session.query(State).filter(State.name == (argv[4],)) \
-                                 .order_by(State.id)
-    if record:
-        print(record[0].id)
-    else:
+                                 .order_by(State.id).all()
+    if len(record) == 0:
         print("Not Found")
+    else:
+        print(record[0].id)
