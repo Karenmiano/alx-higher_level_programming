@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
