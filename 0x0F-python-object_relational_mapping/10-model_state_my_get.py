@@ -11,7 +11,7 @@ if __name__ == "__main__":
                               3306/{}""".format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    record = session.query(State).filter(State.name == argv[4]) \
+    record = session.query(State).filter(State.name == (argv[4],)) \
                                  .order_by(State.id)
     if record:
         print(record[0].id)
