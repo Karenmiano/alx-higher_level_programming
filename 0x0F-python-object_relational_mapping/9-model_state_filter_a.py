@@ -11,6 +11,7 @@ if __name__ == "__main__":
                               3306/{}""".format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    records = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    records = session.query(State).filter(State.name.like('%a%')) \
+                                  .order_by(State.id)
     for record in records:
         print("{}: {}".format(record.id, record.name))
