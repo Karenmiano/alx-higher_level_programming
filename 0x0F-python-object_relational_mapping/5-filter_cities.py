@@ -14,8 +14,11 @@ if __name__ == "__main__":
                    ON cities.state_id = states.id
                    WHERE states.name = %s""", (argv[4],))
     results = cur.fetchall()
-    for record in results:
-        city, = record
-        print(city, end=", " if record != results[-1] else "\n")
+    if results:
+        for record in results:
+            city, = record
+            print(city, end=", " if record != results[-1] else "\n")
+    else:
+        print()
     cur.close()
     db.close()
