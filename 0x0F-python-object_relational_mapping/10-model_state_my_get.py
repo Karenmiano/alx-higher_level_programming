@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     record = session.query(State).filter(text("name=:name")) \
-                                 .params(name=argv[0]) \
+                                 .params(name=argv[4]) \
                                  .order_by(State.id)
     try:
         print(record[0].id)
