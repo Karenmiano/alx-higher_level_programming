@@ -7,6 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """class to be mapped on table states."""
 
