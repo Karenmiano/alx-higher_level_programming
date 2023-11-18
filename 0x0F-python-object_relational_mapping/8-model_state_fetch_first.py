@@ -11,6 +11,8 @@ if __name__ == "__main__":
                               3306/{}""".format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    records = session.query(State).order_by(State.id)
-    for record in records:
+    record = session.query(State).first()
+    if record is None:
+        print("Nothing")
+    else:
         print("{}: {}".format(record.id, record.name))
