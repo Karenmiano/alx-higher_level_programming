@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 const arr = require('./100-data').list;
 const newarr = arr.map((x, idx) => x * idx);
