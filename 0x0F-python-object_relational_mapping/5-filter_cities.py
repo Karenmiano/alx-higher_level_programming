@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cur.execute("""SELECT cities.name FROM cities
                 JOIN states
                 ON states.id = cities.state_id
-                WHERE states.name = %s""", (argv[4], ))
+                WHERE BINARY states.name = %s""", (argv[4], ))
     results = cur.fetchall()
     cities = [record[0] for record in results]
     print(' ,'.join(cities))
