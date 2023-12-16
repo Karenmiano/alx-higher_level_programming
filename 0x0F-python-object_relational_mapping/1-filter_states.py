@@ -13,7 +13,7 @@ if __name__ == "__main__":
         port=3306
     )
     cur = db.cursor()
-    cur.execute("""SELECT * from states WHERE BINARY name LIKE 'N%'
+    cur.execute("""SELECT * from states WHERE BINARY name LIKE "N%"
                 ORDER BY id ASC""")
     results = cur.fetchall()
     for record in results:
