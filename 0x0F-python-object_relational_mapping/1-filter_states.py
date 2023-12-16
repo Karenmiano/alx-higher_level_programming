@@ -18,5 +18,5 @@ if __name__ == "__main__":
     results = cur.fetchall()
     for record in results:
         print(record)
-    cur.close
-    db.close
+    cur.close()
+    db.close()
