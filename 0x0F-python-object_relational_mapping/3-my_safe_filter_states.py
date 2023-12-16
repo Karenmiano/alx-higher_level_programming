@@ -13,8 +13,9 @@ if __name__ == "__main__":
         port=3306
     )
     cur = db.cursor()
+    match = argv[4]
     cur.execute("""SELECT * FROM states WHERE BINARY name LIKE %s
-                ORDER BY id ASC""", (argv[4], ))
+                ORDER BY id ASC""", (match, ))
     results = cur.fetchall()
     for record in results:
         print(record)
