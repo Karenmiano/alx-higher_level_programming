@@ -20,6 +20,6 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC""", (argv[4], ))
     results = cur.fetchall()
     cities = [record[0] for record in results]
-    print(*cities, sep=" ,")
+    print(', '.join(cities))
     cur.close()
     db.close()
