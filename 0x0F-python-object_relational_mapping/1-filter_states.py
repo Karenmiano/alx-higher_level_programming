@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("""SELECT * from states WHERE BINARY name LIKE 'N%'
                 ORDER BY id ASC""")
-    results = cur.fetchall()        
+    results = cur.fetchall()
     for record in results:
         print(record)
     cur.close()
