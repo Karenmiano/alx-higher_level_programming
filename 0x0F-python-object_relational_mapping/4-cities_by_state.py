@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists state from database where name is Arizona"""
+"""lists cities from database and their linked states"""
 
 from sys import argv
 import MySQLdb
@@ -13,8 +13,10 @@ if __name__ == "__main__":
         port=3306
     )
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE BINARY name LIKE %s
-                ORDER BY id ASC""", (argv[4], ))
+    cur.execute("""SELECT cities.id, cities.name, states.name FROM cities
+                JOIN states
+                ON states.id = cities.state_id
+                ORDER BY id ASC""")
     results = cur.fetchall()
     for record in results:
         print(record)
