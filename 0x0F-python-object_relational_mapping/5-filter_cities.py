@@ -19,6 +19,6 @@ if __name__ == "__main__":
                 WHERE BINARY states.name = %s""", (argv[4], ))
     results = cur.fetchall()
     cities = [record[0] for record in results]
-    print(' ,'.join(cities))
+    print(*cities, sep=" ,")
     cur.close()
     db.close()
