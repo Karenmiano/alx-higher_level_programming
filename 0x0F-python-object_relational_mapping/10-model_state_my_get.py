@@ -13,4 +13,4 @@ if __name__ == '__main__':
     session = Session()
     result = session.query(State).filter(text('name=:name')).params(
              name=argv[4]).first()
-    print(result.id if result else "Not Found")
+    print(result.id if result else "Not found")
