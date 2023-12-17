@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Create state and link a city in hbtn_0e_100_usa"""
+"""List states with their cities hbtn_0e_101_usa"""
 
 from sys import argv
 from sqlalchemy import create_engine
