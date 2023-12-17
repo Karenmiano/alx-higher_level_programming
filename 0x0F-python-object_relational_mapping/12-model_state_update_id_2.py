@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Add state Louisiana and print id in hbtn_0e_6_usa"""
+"""Change name of state id 2 hbtn_0e_6_usa"""
 
 from sys import argv
 from sqlalchemy import create_engine
@@ -11,7 +11,7 @@ if __name__ == '__main__':
                             argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_new = State(name="Louisiana")
-    session.add(state_new)
+    state = session.query(State).filter(State.id == 2).first()
+    state.name = "New Mexico"
+    session.add(state)
     session.commit()
-    print(state_new.id)
