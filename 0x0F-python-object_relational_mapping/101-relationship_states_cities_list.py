@@ -17,4 +17,3 @@ if __name__ == '__main__':
         cities = state.cities
         for city in cities:
             print(f'    {city.id}: {city.name}')
-
