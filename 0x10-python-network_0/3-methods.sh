@@ -1,3 +1,3 @@
 #!/bin/bash
 # takes url and displays all HTTP methods server will accept
-curl -s -X OPTIONS "$1"
+curl -isX OPTIONS "$1" | grep -oP "Allow: \K[A-Za-z, ]+"
