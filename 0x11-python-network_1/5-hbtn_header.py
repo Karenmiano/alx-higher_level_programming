@@ -7,5 +7,5 @@ if __name__ == '__main__':
     import sys
 
     res = requests.get(sys.argv[1])
-    val = res.headers['X-Request-Id']
+    val = res.headers.get('X-Request-Id')
     print(val)
