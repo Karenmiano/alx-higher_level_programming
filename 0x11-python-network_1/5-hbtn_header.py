@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-Takes in url, makes request and fetches value of X-Request-Id
-from response headers
-"""
+"""Takes in url, makes request and fetches value of X-Request-Id
+from response headers"""
 
 import requests
 import sys
