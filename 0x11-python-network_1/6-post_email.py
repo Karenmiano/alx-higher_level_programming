@@ -3,7 +3,7 @@
 Takes in url and an email address, sends post request
 """
 
-if __name__ = '__main__':
+if __name__ == '__main__':
   import requests
   import sys
 
