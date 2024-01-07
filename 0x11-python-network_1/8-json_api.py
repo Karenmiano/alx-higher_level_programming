@@ -14,8 +14,8 @@ if __name__ == '__main__':
         if len(json_decoded) == 0:
             print("No result")
         else:
-            id = json_decoded['id']
-            name = json_decoded['name']
+            id = json_decoded.get('id')
+            name = json_decoded.get('name')
             print(f'[{id}] {name}')
     except json.decoder.JSONDecodeError:
         print("Not a valid JSON")
