@@ -8,7 +8,7 @@ if __name__ == "__main__":
     import sys
 
     param = urllib.parse.urlencode({'email': sys.argv[2]})
-    param = param.encode('utf-8')
+    param = param.encode('ascii')
     with urllib.request.urlopen(sys.argv[1], param) as response:
         page = response.read().decode('utf-8')
         print(page)
