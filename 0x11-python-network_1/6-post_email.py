@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Takes in url and an email address, sends post request and displays body response
+Takes in url and an email address, sends post request
 """
 
 if __name__ = '__main__':
