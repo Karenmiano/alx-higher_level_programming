@@ -5,7 +5,8 @@ binary version and decoded version"""
 if __name__ == '__main__':
     import urllib.request
 
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
         ans = response.read()
     response_type = type(ans)
     decoded = ans.decode('utf-8')
